@@ -1,0 +1,40 @@
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+N = 1041
+
+def solution(N):
+    # write your code in Python 3.6
+    
+    # create an array with binary number
+    list = [int(d) for d in str(bin(N))[2:]]
+    
+    #print(list)
+    #print()
+
+    # define initial values for variables
+    czero = 0
+    maxgap = 0
+
+    # creat a loop to count zero gap and evaluates the bigger gap
+    for x in range(len(list)):
+        #print(list[x])
+        if list[x] == 0:
+            czero = czero + 1
+        
+        if list[x] == 1:
+                if czero > maxgap:
+                    maxgap = czero
+                czero = 0
+
+    #print()
+    #print(czero)
+    #print()
+    
+    # print biggergap
+    # print(maxgap)
+    return(maxgap)
+
+    pass
+
+solution(N)
